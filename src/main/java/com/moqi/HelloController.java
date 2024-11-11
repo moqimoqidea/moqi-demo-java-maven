@@ -8,9 +8,14 @@ import java.util.Map;
 @RestController
 public class HelloController {
 
-    @GetMapping("/get")
+    @GetMapping("/hello")
     public Map<String, String> getResult() {
-        return Map.of("result", "success");
+        String name = "tom";
+
+        return Map.of(
+            "result", "success",
+            "user", name
+        );
     }
 
 }
