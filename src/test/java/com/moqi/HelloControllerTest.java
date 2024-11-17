@@ -18,9 +18,10 @@ public class HelloControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testGetEndpoint() throws Exception {
-        mockMvc.perform(get("/get"))
+    public void testHelloEndpoint() throws Exception {
+        mockMvc.perform(get("/hello"))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.result").value("success"));
+            .andExpect(jsonPath("$.result").value("success"))
+            .andExpect(jsonPath("$.user").value("tom"));
     }
 }
