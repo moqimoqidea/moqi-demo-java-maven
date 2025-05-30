@@ -26,5 +26,14 @@ public class HelloController {
         );
     }
 
+    @GetMapping("/hello_admin")
+    public Map<String, String> helloAdmin() {
+        return Map.of(
+            "result", "success",
+            "role", "admin",
+            "message", "Hello Admin!"
+        );
+    }
+
 }
 
